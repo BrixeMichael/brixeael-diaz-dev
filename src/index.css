@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #0b0c10;
+  --surface-color: #1f2833;
+  --surface-light: rgba(31, 40, 51, 0.6);
+  --primary: #66fcf1;
+  --primary-dark: #45a29e;
+  --text-main: #e2e2e2;
+  --text-muted: #a0aab2;
+  --border-color: rgba(102, 252, 241, 0.1);
+  --glass-bg: rgba(31, 40, 51, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(102, 252, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(69, 162, 158, 0.08) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(102, 252, 241, 0.5);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  border-color: rgba(102, 252, 241, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Delay classes for staggered animations */
+.delay-100 { animation-delay: 100ms; opacity: 0; }
+.delay-200 { animation-delay: 200ms; opacity: 0; }
+.delay-300 { animation-delay: 300ms; opacity: 0; }
+.delay-400 { animation-delay: 400ms; opacity: 0; }
+.delay-500 { animation-delay: 500ms; opacity: 0; }
+
+/* Highlight text utility */
+.text-accent {
+  color: var(--primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .glass-panel {
+    padding: 1.5rem;
+  }
+}

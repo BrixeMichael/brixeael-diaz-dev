@@ -1,0 +1,42 @@
+/* Additional styles for App layout */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 70px);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .hero-layout {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}

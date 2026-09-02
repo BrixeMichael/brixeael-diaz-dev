@@ -1,0 +1,30 @@
+.summary {
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-wrapper {
+  background: rgba(102, 252, 241, 0.1);
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-header h3 {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.summary-text {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.8;
+}
